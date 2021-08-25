@@ -27,7 +27,7 @@ public class Frames {
     }
 
     public void pitch(final Pin pin) {
-        final Frame frame = getLastFrame();
+        final Frame frame = getCurrentFrame();
         frame.play(pin);
         ifItNormalFrameProceedNextFrame(frame);
     }
@@ -38,7 +38,7 @@ public class Frames {
         }
     }
 
-    private Frame getLastFrame() {
+    private Frame getCurrentFrame() {
         return frames.get(frames.size() - 1);
     }
 
@@ -47,11 +47,11 @@ public class Frames {
     }
 
     private boolean isEqualsLastFrame() {
-        return getLastFrame() instanceof LastFrame;
+        return getCurrentFrame() instanceof LastFrame;
     }
 
     private boolean isHasNotTurn() {
-        return !(getLastFrame().hasTurn());
+        return !(getCurrentFrame().hasTurn());
     }
 
     public List<StateDtos> convertToStateDtosList() {
