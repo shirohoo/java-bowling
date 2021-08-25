@@ -29,13 +29,7 @@ public class Frames {
     public void pitch(final Pin pin) {
         final Frame frame = getCurrentFrame();
         frame.play(pin);
-        ifItNormalFrameProceedNextFrame(frame);
-    }
-
-    private void ifItNormalFrameProceedNextFrame(final Frame frame) {
-        if (frame instanceof NormalFrame) {
-            ((NormalFrame) frame).proceed(frames);
-        }
+        frame.proceed(frames);
     }
 
     private Frame getCurrentFrame() {

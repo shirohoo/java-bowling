@@ -33,6 +33,7 @@ public class NormalFrame implements Frame {
         return state.isEnd();
     }
 
+    @Override
     public void proceed(final List<Frame> frames) {
         if (hasTurn()) {
             progressNextFrame(frames);

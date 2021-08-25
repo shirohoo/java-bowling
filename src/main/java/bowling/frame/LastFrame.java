@@ -6,6 +6,8 @@ import bowling.pin.Pin;
 import bowling.state.LastStateProxy;
 import bowling.state.State;
 
+import java.util.List;
+
 import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.toList;
 
@@ -23,6 +25,11 @@ public class LastFrame implements Frame {
     @Override
     public void play(final Pin pin) {
         state.nextPitch(pin);
+    }
+
+    @Override
+    public void proceed(final List<Frame> frames) {
+        // nothing
     }
 
     @Override
