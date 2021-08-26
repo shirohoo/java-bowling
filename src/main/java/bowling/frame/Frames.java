@@ -37,11 +37,11 @@ public class Frames {
     }
 
     public boolean isEnd() {
-        return isEqualsLastFrame() && isHasNotTurn();
+        return isLastFrame() && isHasNotTurn();
     }
 
-    private boolean isEqualsLastFrame() {
-        return getCurrentFrame() instanceof LastFrame;
+    private boolean isLastFrame() {
+        return getCurrentFrame().isLastFrame();
     }
 
     private boolean isHasNotTurn() {

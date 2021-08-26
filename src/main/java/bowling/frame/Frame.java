@@ -13,4 +13,6 @@ public interface Frame {
     void proceed(final List<Frame> frames);
 
     StateDtos convertToStateDtos();
+
+    boolean isLastFrame();
 }

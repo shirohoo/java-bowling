@@ -44,4 +44,9 @@ public class LastFrame implements Frame {
                 .map(StateDto::from)
                 .collect(collectingAndThen(toList(), StateDtos::from));
     }
+
+    @Override
+    public boolean isLastFrame() {
+        return true;
+    }
 }
